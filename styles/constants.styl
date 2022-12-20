@@ -1,0 +1,35 @@
+textColor1 = #fff
+textColor2 = #a9a9a9
+textColor3 = #818181
+
+bgColor = linear-gradient(113.97deg,#34013d 0%,#002924 21.61%,#140c23 45.38%,rgba(0,4,81,0.963) 58.99%,#35013e 69.55%,#150d24 82.67%);
+borderColor = #3a2a4f
+
+block()
+  background rgba(147, 147, 147, 0.29)
+  border 1px solid borderColor
+block-dark()
+  block()
+  background #140c2355
+
+block-clickable()
+  block()
+  transition all 0.2s ease
+  cursor pointer
+  &:hover
+    background mix(borderColor, white, 80%)
+
+block-dark-clickable()
+  block-dark()
+  transition all 0.2s ease
+  cursor pointer
+  &:hover
+    background mix(#140c2355, white, 95%)
+
+svg-button()
+  transition all 0.2s ease
+  oopacity 0.8
+  cursor pointer
+  &:hover
+    opacity 1
+    transform scale(1.1)

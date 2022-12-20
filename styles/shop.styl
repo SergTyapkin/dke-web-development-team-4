@@ -1,0 +1,87 @@
+@require "constants"
+
+.shop-page
+  .filters
+    width 100%
+    text-align center
+    .all-filters
+      position absolute
+      left 50%
+      top 0
+      padding 20px
+      max-width calc(100% - 300px)
+      transform translateX(-50%)
+      display flex
+      flex-wrap wrap
+      border-radius 30px
+      block()
+      overflow hidden
+      transition all 0.2s ease
+      &.hidden
+        height 0
+        padding 0
+        opacity 0
+
+      div
+        padding 5px
+        input[type=checkbox]
+          margin-right 10px
+        label
+          m 1
+      .button-close
+        transform rotate(45deg)
+        position absolute
+        right 0
+        top 0
+        svg-button()
+        &:hover
+          transform rotate(45deg) scale(1.1)
+        img
+          width 30px
+          height 30px
+    .button
+      font-size 1.5em
+      block-clickable()
+      margin 20px auto
+      padding 10px 10px
+      transition all 0.2s ease
+      &.hidden
+        opacity 0
+        pointer-events none
+
+  .items
+    list-style none
+    margin 0
+    padding 0
+    .item
+      width 80%
+      margin 40px 0
+      block-dark-clickable()
+      border-radius 30px
+      padding 40px
+      display flex
+      .image
+        max-height 150px
+        object-fit contain
+        width 30%
+        margin-right 20px
+        img
+          height 100%
+          width 100%
+      .description
+        .title
+          font-size 2em
+          margin-bottom 20px
+        .characteristics
+          div
+            margin 10px 0
+            color textColor2
+
+    .item:nth-child(2n+1)
+      margin-left auto
+      border-bottom-right-radius 0
+      border-top-right-radius 0
+    .item:nth-child(2n)
+      margin-right auto
+      border-bottom-left-radius 0
+      border-top-left-radius 0
